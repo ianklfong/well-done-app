@@ -410,6 +410,7 @@ function App() {
     $('.removeDone').toggleClass('dark');
     $('.Gohid').toggleClass('dark');
     $('#search').toggleId('dark');
+    $('#Scheduler').toggleId('dark');
 }
 
 
