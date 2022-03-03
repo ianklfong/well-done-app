@@ -43,7 +43,7 @@ const events = [
 
 
 
-export function Scheduler({ allTasks }) {
+export default function Scheduler({ allTasks }) {
     const [schedule, setSchedule] = useState([]);
     
 
@@ -75,7 +75,7 @@ export function Scheduler({ allTasks }) {
     
     return(
         
-        <div style={containerStyle} className="pt-3 pb-5" id="scheduler">
+        <div style={containerStyle} className="pt-3 pb-5" id="Scheduler">
 
             <div style={{background: 'white',     borderRadius: 19,}} id="calendar" className=' pt-5 h-100'>
 

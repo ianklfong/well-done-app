@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-
-import $ from 'jquery';
-
 import styled from 'styled-components';
 import AllTasksList from './AllTasksList';
 import EmptyProgress from './EmptyProgress';
@@ -14,29 +11,6 @@ import SearchBar from './SearchBar.jsx';
 import Progresses from './Progresses';
 import TasksNumber from './TasksNumber';
 import TodayTasks from './TodayTasks';
-
-
-const size = {
-    mobileS: '320px',
-    mobileM: '375px',
-    mobileL: '425px',
-    tablet: '768px',
-    laptop: '1024px',
-    laptopL: '1440px',
-    desktop: '2560px'
-  }
-const device = {
-    mobileS: `(min-width: ${size.mobileS})`,
-    mobileM: `(min-width: ${size.mobileM})`,
-    mobileL: `(min-width: ${size.mobileL})`,
-    tablet: `(min-width: ${size.tablet})`,
-    laptop: `(min-width: ${size.laptop})`,
-    laptopL: `(min-width: ${size.laptopL})`,
-    desktop: `(min-width: ${size.desktop})`,
-    desktopL: `(min-width: ${size.desktop})`
-};
-
-
 
 const Container = styled.div`
     height: 100vh; 
@@ -75,20 +49,20 @@ let OverviewText = styled.div`
     position: absolute; 
     // transition: 1s;
 `
-const flexFont = {
-    textAlign: 'center',
-    // transform: translate(-50%, -50%),
-    top: '50%',
-    left:'50%',
-    position: 'absolute',
-    // fontSize: '1.5vw',
-}
 
 //current date elements
 const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
 const d = new Date();
 let date = d.getDate();
-let day = weekday[d.getDay()];
+let todayWeekDay = weekday[date];
+let year = d.getFullYear();
+
+//get current month in mm format
+const month = String(d.getMonth() + 1).padStart(2, '0');
+//get today's date in dd format
+const day = String(d.getDate()).padStart(2, '0');
+//get today's date in yyyy-mm-dd format
+const todaysDate = year + '-' + month + '-' + day;
 
 function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask, handleToggleDone, handleRemoveTask, listOrder, searchItems, searchInput, searchResults, handleSearchInput, sidebar, taskForm, handleEditListTitle }) {
     
@@ -100,7 +74,6 @@ function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask,
             // set the font size as 2.5
             setFontSize(4.2)
             // console.log(fontSize)
-
             return;
         }
         // if any one of sidebar & task form is active
@@ -125,7 +98,7 @@ function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask,
     const [today, setToday] = useState(0)
 
     useEffect(() => {
-        const todayTasks = lists['all-tasks'].taskIds.slice().filter(task => allTasks[task].date === '2022-02-11').length
+        const todayTasks = lists['all-tasks'].taskIds.slice().filter(task => allTasks[task].date === todaysDate).length
         setToday(todayTasks)
 
     }, [allTasks])
@@ -140,7 +113,7 @@ function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask,
             
 
     return (
-        <Container className='col-12' id="Home">
+        <Container className='col-12' id="Overview">
             <div className="row h-100">
                 {/* Start of left column */}
                 <LeftColumn className="col-5 pt-4 d-none d-md-flex">
@@ -164,7 +137,7 @@ function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask,
                                     // style={flexFont}
                                     style={{fontSize: `${fontSize}vw`}}
                                     >
-                                      <p className="overview-text" style={{fontSize: `${fontSize/ 3}vw`, transition: '1s'}}>{day}</p>
+                                      <p className="overview-text" style={{fontSize: `${fontSize/ 3}vw`, transition: '1s'}}>{todayWeekDay}</p>
                                       <p className="overview-num" style={{lineHeight: 1, transition: '1s'}}>{date}</p>
                                       <p className="overview-text" style={{fontSize: `${fontSize/ 3}vw`, transition: '1s'}}>FEB</p>
                                     </OverviewText>

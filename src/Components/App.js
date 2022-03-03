@@ -27,7 +27,7 @@ import ListsPage from './Lists/ListsPage';
 // impot add Task Form
 import TaskForm from './TaskForm';
 //import calendar
-import { Scheduler } from './Calendar';
+import Scheduler from './Scheduler';
 
 const MainRow = styled.div`
   height: 100vh;
