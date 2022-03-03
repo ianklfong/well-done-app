@@ -49,8 +49,7 @@ export default function Scheduler({ allTasks }) {
 
 
     useEffect(() => {
-        // console.log('allTasks' + allTasks)
-        // console.log('Array' + Object.keys(allTasks))
+
         const tasksContainer = [];
         Object.keys(allTasks).map(task => {
             // console.log(task)

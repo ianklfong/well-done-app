@@ -393,7 +393,7 @@ function App() {
     $('#sidebar').toggleClass('dark');
     $('.nav-icon1').toggleClass('dark');
     $('.nav-icon2').toggleClass('dark');
-    $('#Home').toggleClass('dark');
+    $('#Overview').toggleClass('dark');
     $('h3').toggleClass('dark');
     $('#taskForm').toggleClass('dark');
     $('.pinned-list').toggleClass('dark');
