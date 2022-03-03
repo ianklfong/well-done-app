@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/well-done-app/static/css/main.2aef697b.css",
+    "main.js": "/well-done-app/static/js/main.ce3f315c.js",
+    "static/js/787.0e4aa555.chunk.js": "/well-done-app/static/js/787.0e4aa555.chunk.js",
+    "index.html": "/well-done-app/index.html",
+    "main.2aef697b.css.map": "/well-done-app/static/css/main.2aef697b.css.map",
+    "main.ce3f315c.js.map": "/well-done-app/static/js/main.ce3f315c.js.map",
+    "787.0e4aa555.chunk.js.map": "/well-done-app/static/js/787.0e4aa555.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2aef697b.css",
+    "static/js/main.ce3f315c.js"
+  ]
+}
