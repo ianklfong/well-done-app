@@ -67,10 +67,10 @@ function ListsPage({ lists, listOrder, onDragEnd, allTasks, handleAddList, handl
     return (
         <div 
             className="col-12"
-            style={{height: "90vh",
+            style={{height: "80vh",
                     width: "100%",
                     padding: 0,
-                    minHeight: 850,
+                    minHeight: 800,
                     position: 'relative'
             }} 
             id="Lists"

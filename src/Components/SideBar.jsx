@@ -71,7 +71,7 @@ function SideBar({ handleDark, dark, handleSidebar }) {
 
                 </ul>
 
-                <ul className='mt-autp' style={{position: 'absolute', bottom: 0, left: -35}}>
+                <ul className='mt-auto d-none' style={{position: 'absolute', bottom: 0, left: -35}}>
                     <li className="mode">
                         <a href="#">
                             {/* calendar icon */}
