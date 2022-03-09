@@ -71,20 +71,20 @@ function Overview({lists, onDragEnd, allTasks, handleRemoveDone, handleEditTask,
     useEffect(() => {
         // if both sidebar & task form are collapsed
         if(sidebar === false && taskForm === false) {
-            // set the font size as 2.5
+            // set the font size as 4.2
             setFontSize(4.2)
             // console.log(fontSize)
             return;
         }
         // if any one of sidebar & task form is active
         if((sidebar === true && taskForm === false )|| (sidebar === false && taskForm === true)) {
-            // set the font size as 1.5
+            // set the font size as 3.2
             setFontSize(3.2);
             return;
         }
         // if both are active
         if(sidebar ===true && taskForm === true) {
-            // set the font size as 1
+            // set the font size as 2.5
             setFontSize(2.5);
             return;
         }
